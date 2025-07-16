@@ -1,6 +1,6 @@
 //Leetcode Link: https://leetcode.com/problems/encode-and-decode-strings/
-//Youtube Link: 
 
+// Approach: add separator between strings to encode and split by that separaotr to  decode.
 public class Codec {
 
     // Encodes a list of strings to a single string.

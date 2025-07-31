@@ -1,6 +1,6 @@
 0/1 knapsack recursive:- import java.util.*;
 
-class GfG {
+class knapsack {
 
     // Returns the maximum value that
     // can be put in a knapsack of capacity W

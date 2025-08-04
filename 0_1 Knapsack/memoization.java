@@ -6,7 +6,7 @@ class GfG {
     // can be put in a knapsack of capacity W
     static int knapsackRec(int W, int[] val, int[] wt, int n, int[][] memo) {
 
-        // Base Case
+        
         if (n == 0 || W == 0)
             return 0;
 

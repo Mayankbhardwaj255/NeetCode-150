@@ -1,0 +1,42 @@
+//Recursive Inorder Approach
+
+class Solution {
+    public int kthSmallest(TreeNode root, int k) {
+        List<Integer> inorder = new ArrayList<>();
+        inorderTraversal(root, inorder);
+        return inorder.get(k - 1); // k-th smallest (1-indexed)
+    }
+
+    private void inorderTraversal(TreeNode node, List<Integer> list) {
+        if (node == null) return;
+        inorderTraversal(node.left, list);
+        list.add(node.val);
+        inorderTraversal(node.right, list);
+    }
+}
+
+
+//Max Heap of Size k
+
+import java.util.*;
+
+class Solution {
+    public int kthSmallest(TreeNode root, int k) {
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        dfs(root, maxHeap, k);
+        return maxHeap.peek();
+    }
+
+    private void dfs(TreeNode node, PriorityQueue<Integer> heap, int k) {
+        if (node == null) return;
+
+        heap.offer(node.val);
+        if (heap.size() > k) {
+            heap.poll(); // remove largest to keep only k smallest
+        }
+
+        dfs(node.left, heap, k);
+        dfs(node.right, heap, k);
+    }
+}
+

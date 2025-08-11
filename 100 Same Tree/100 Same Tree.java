@@ -17,6 +17,8 @@ class Solution {
         if(p.val != q.val){
             return false;
         }
+        // CHECK FOR CORRESPONDING LEFT AND WRITE SUBTREE
+        
         return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
         
     }

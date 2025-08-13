@@ -1,5 +1,5 @@
 // Leetcode link:- https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
-//1st Approach:-
+//1st Approach:- using minimum so far
 class Solution {
     public int maxProfit(int[] prices) {
         int min = prices[0];

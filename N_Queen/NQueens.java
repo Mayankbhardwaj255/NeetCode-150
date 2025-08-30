@@ -25,22 +25,33 @@
     }
 
     private static boolean isSafe(boolean[][] board, int row, int col) {
+     //check horizontally:-
+     for(int j = 0; j<n; j++){
+      if (board[row][j])
+         return false;
+     }
+     
         // Check vertically above
         for (int i = 0; i < row; i++) {
             if (board[i][col]) return false;
         }
 
-        // Check diagonal top-left
-        for (int i = 1; i <= Math.min(row, col); i++) {
-            if(board[row - i][col - i]) return false;
-        }
+        // Check for left diagonal:-
 
-        // Check diagonal top-right
-        for (int i = 1; i <= Math.min(row, board.length - col - 1); i++) {
-            if(board[row - i][col + i]) return false;
-        }
+     for(int i =row, j=col; i>=0, j>=0; i--,j--){
+      if(board[i][j])
+       return false;
+     }
 
-        return true;
+     //For right diagonal:-
+
+     for(int i=row, j=col; i>=0; j<n; i--,j++){
+      if(board[i][j])
+       return false;
+     }
+     return false;
+
+      return true;
     }
 
     private static void display(boolean[][] board) {
